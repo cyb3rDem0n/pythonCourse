@@ -77,11 +77,11 @@ print(listx[-3:-2]) # ottengo il 2
 
 print(listx[-2])
 
-"""
+
 # range(start INCLUSIVO, stop ESCLUSIVO, step)
 listy = [i for i in range(-1,2)] # -1 0 1 2 sono 4 ma lo STOP è esclusivo quindi 3 valori
 print(listy)
-"""
+
 listk = [3,1,-2]
 print(listk[listk[-1]]) 
 # prende come indice il valore dell arrey in ultima posizione quindi -2,
@@ -101,4 +101,22 @@ while var < 6:
         continue
     print("#")
 
+
+month = 1
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+day_of_year = 0
+for i in range(month - 1):
+    day_of_year += days_in_month[i]
+
+print(day_of_year)
+
 """
+def fun(a):
+    if a > 30:
+        return 3
+    else:
+        print(a)
+        return a + fun(a + 3)
+    
+print(fun(25))
+    

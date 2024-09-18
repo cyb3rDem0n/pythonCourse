@@ -1,3 +1,6 @@
+# Remember: variables containing lists are stored in a different way than scalars
+
+
 # Posso inizializzare una lista anche direttamente come segue
 
 row = ["WHITE_PAWN" for i in range(8)]
