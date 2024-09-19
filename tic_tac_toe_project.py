@@ -25,41 +25,38 @@ def tictactoe_game():
     cpu_com += 1
     move_count = 1
     human_retry = False
+    row = 01
+    
+    col = 0
 
     while coins == 0:
         coins = int(input("INSERT 1 COIN TO START A NEW GAME: "))
     else:
         try:
-             
-            while (human_com < 1 or human_com > 9) or board[row][col] == "X": 
+            human_com = int(input("Make your move [1 - 9]: "))
+            while board[row][col] == "X": 
                 human_com = int(input("Make your move [1 - 9]: ")) 
             else:
-                row, col = board_logic[human_com]           
-            
-            for _ in board_logic:
-                row, col = board_logic[human_com] 
+                for _ in board_logic:
+                    row, col = board_logic[human_com] # PRENDO I,J DELLA BOARD
 
-                if board[row][col] == "X":
-                    print("Human insert - Position Used")
+                board[row][col] = "O" # GLI METTO O NELLA POSIZIONE SCELTA DALL UMANO
+                move_count += 1
+                print("Human Moved")
 
-                else:
-                    board[row][col] = "O"
-                    move_count += 1
-                    print("Human Moved")
-
-                    while cpu_retry == True:
-                        row, col = board_logic[cpu_com] 
-                        if board[row][col] == "X":
-                            cpu_retry = True
-                            print("CPU insert - Position Used")
-                            cpu_com = randrange(8)
-                        else:
-                            cpu_retry = False
-                            board[row][col] = "X"
-                            move_count += 1
-                            print("CPU Moved")
-                            if move_count == 9:
-                                    return
+                while cpu_retry == True:
+                    row, col = board_logic[cpu_com] 
+                    if board[row][col] == "X":
+                        cpu_retry = True
+                        print("CPU insert - Position Used")
+                        cpu_com = randrange(8)
+                    else:
+                        cpu_retry = False
+                        board[row][col] = "X"
+                        move_count += 1
+                        print("CPU Moved")
+                        if move_count == 9:
+                                return
 
         except(ValueError, TypeError):
             print("Please put only integer value from 1 to 9 to make your move!")
