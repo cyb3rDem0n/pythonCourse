@@ -110,7 +110,7 @@ for i in range(month - 1):
 
 print(day_of_year)
 
-"""
+
 def fun(a):
     if a > 30:
         return 3
@@ -120,3 +120,37 @@ def fun(a):
     
 print(fun(25))
     
+
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for e, f in dictionary.items():
+    print(e, "->", f)
+
+for french in dictionary.values():
+    print(french)
+
+
+
+colors = (("green", "#008000"), ("blue", "#0000FF"))
+
+colors_dictionary = dict(colors)
+print(colors_dictionary)
+
+
+
+
+tup = 1, 2, 3, 2, 4, 5, 6, 2, 7, 2, 8, 9
+duplicates = tup.count(2)
+print(duplicates)
+
+"""
+d1 = {'Adam Smith': 'A', 'Judy Paxton': 'B+'}
+d2 = {'Mary Louis': 'A', 'Patrick White': 'C'}
+d3 = {}
+
+for item in (d1, d2):
+    d3 = d1 , d2
+
+print(d3)
+
