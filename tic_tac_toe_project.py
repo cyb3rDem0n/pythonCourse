@@ -1,70 +1,63 @@
 # TIC TAC TOE
 
 from random import randrange
-
-
+1,9
 def tictactoe_game():
-    cpu_retry = True
     coins = 0
-    move_count = 0 # va da 5 a 10
-    human_com = 0
-    cpu_com = 0
-    board = [
-        [0, 0, 0], 
-        [0, 0, 0], 
-        [0, 0, 0]
-            ]
-
-    board_logic = {
-        1:(0,0), 2:(0,1), 3:(0,2),
-        4:(1,0), 5:(1,1), 6:(1,2),
-        7:(2,0), 8:(2,1), 9:(2,2)
+    human_command = 0
+    
+    board = {
+        1:"0", 2:"0", 3:"0",
+        4:"0", 5:"0", 6:"0",
+        7:"0", 8:"0", 9:"0"
     }
 
-    board[1][1] = "X" # PC first move
-    cpu_com += 1
-    move_count = 1
-    human_retry = False
-    row = 01
-    
-    col = 0
+    available_moves = list(board.values()).count("0")
+    random_move = 0
 
-    while coins == 0:
+    while coins <= 0:
         coins = int(input("INSERT 1 COIN TO START A NEW GAME: "))
     else:
-        try:
-            human_com = int(input("Make your move [1 - 9]: "))
-            while board[row][col] == "X": 
-                human_com = int(input("Make your move [1 - 9]: ")) 
-            else:
-                for _ in board_logic:
-                    row, col = board_logic[human_com] # PRENDO I,J DELLA BOARD
+        print("##########","###GAME###","###START##","##########",sep="\n" )
+        board[5] = "X" # PC first move
+        
+        # Stampa la scacchiera 3x3
+        for i in range(1, 10, 3):
+            print(board[i], board[i+1], board[i+2])
+        
+        while available_moves > 0: # se ci sta almeno uno spazio vuoto sulla board
+            human_command = int(input("Make your move [1 - 9]: "))
 
-                board[row][col] = "O" # GLI METTO O NELLA POSIZIONE SCELTA DALL UMANO
-                move_count += 1
-                print("Human Moved")
+            # manca verifica se 3 valori sono di file per fare tris
 
-                while cpu_retry == True:
-                    row, col = board_logic[cpu_com] 
-                    if board[row][col] == "X":
-                        cpu_retry = True
-                        print("CPU insert - Position Used")
-                        cpu_com = randrange(8)
+            for i in board:
+                if(board[i] == "X"): # se all'indice troviamo una X e quell'indice è uguale alla mossa del H - riprova
+                    if(i == human_command):
+                        print("Used Position - Human Retry")
+                    elif 9 > human_command <= 0:
+                        print("Bad Input - from 1 to 9 please")
                     else:
-                        cpu_retry = False
-                        board[row][col] = "X"
-                        move_count += 1
-                        print("CPU Moved")
-                        if move_count == 9:
-                                return
+                        # Human move
+                        board.update({human_command:"O"})
+                        print(f"Human make his move: {human_command}")
+                        
+                        # CPU RANDOM MOVE
+                        random_move = randrange(1,9)
 
-        except(ValueError, TypeError):
-            print("Please put only integer value from 1 to 9 to make your move!")
+                        # UPDATE AVAILABLE MOVES NUMBER
+                        available_moves = list(board.values()).count("0")
 
+                        while i == random_move or human_command == random_move:
+                            print("Used Position - CPU RETRY")
+                            random_move = randrange(1,9)
+                        else:
+                            board.update({random_move:"X"})
+                            available_moves = list(board.values()).count("0")
+                            print(f"CPU make his move: {random_move}")
+                    print("MOVES LEFT: ", available_moves)
+        print("##########","###GAME###","###OVER###","##########",sep="\n" )
+    
                 
-            
-    print(board)
-
     
 tictactoe_game()   
 
