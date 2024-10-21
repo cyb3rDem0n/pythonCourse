@@ -1,5 +1,9 @@
 """
 ##
+COMPILER: or translator, translate a programm written in high level programming language into 
+            binary code deployable inside an executable file
+
+ORDINE ESECUZIONE OP. MAT. => P E M D A S => Parentesi - Exp - Moltiplicazione - Divisioe - Addizione - Sottrazione
 
 Key takeaways
 
@@ -29,16 +33,6 @@ XOR
 0 1 1 0
 
 
-
-
-"""
-
-
-
-
-
-
-"""
 A SX gli operatori logici a destra i Bitwise Op.
 AND => & (ampersand) - bitwise conjunction
 OR  => | (bar) - bitwise disjunction

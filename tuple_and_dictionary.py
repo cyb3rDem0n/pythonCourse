@@ -100,6 +100,11 @@ d3 = {}
 for item in (d1, d2):
     d3 = d1 , d2 # OPPURE d3.update(item)
 
+# quando ciclo cosi, prendo le chiavi, in particolare la prima lettera della chiave [0]
+train_speed = {"Fly": 200, "Cacca": 300, "Pupu":1000}
+for t in train_speed:
+    print(t[0], end="")
+
 
 # quanti 2 ci sono nella tupla?
 tup = 1, 2, 3, 2, 4, 5, 6, 2, 7, 2, 8, 9
@@ -199,8 +204,12 @@ del dictionary['dog'] # removing a non-existing key causes an error.
 
 dictionary.popitem() # remove the last item in a dictionary,
 
-
 print(dictionary)
+
+# assegna un valore ad elemento di un dizionario
+pizza_menu = {'Margherita': 100}
+pizza_menu ['TonnoCipolla'] = 200
+print(pizza_menu['TonnoCipolla'])
 
 
 # MIX TUPLE E DIZIONARI
@@ -215,10 +224,10 @@ while True:
     score = int(input("Enter the student's score (0-10): "))
     if score not in range(0, 11):
 	    break
-    if name in school_class:
-        school_class[name] += (score,) # se trovo il nome sommo l'iesimo score inserito nel loop
-    else:
-        school_class[name] = (score,) # se non lo trovo aggiungo uno nuovo
+    #if name in school_class:
+    #    school_class[name] += (score,) # se trovo il nome sommo l'iesimo score inserito nel loop
+    #else:
+    #    school_class[name] = (score,) # se non lo trovo aggiungo uno nuovo
         
 for name in sorted(school_class.keys()):
     adding = 0

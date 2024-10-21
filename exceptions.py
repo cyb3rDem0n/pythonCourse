@@ -6,6 +6,18 @@
 # - AttributeError: attempts to make use of a method which isn’t contained in the lists
 # - SyntaxError
 
+
+"""
+IMPORTANTE 
+
+* il codice inserito dentro il try branch potrebbe non essere tutto eseguito se si manifesta un errore
+* se una possibile eccezione non viene gestita e si manifesta, allora l'esecuzione va in errore
+* in caso di errore viene eseguita NON PIU DI 1 except branch 
+
+
+"""
+
+
 # CASO BASE GENERICO
 try:
     value = int(input('Enter a natural number: '))

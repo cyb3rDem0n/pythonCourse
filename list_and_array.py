@@ -32,3 +32,10 @@ for i in range(len(array)):           # Ciclo sulle righe (i)
 
 array3D = [[random.randint(0, 100) for a in range(2)] for b in range(2) for c in range(2)]
 print(array3D)
+
+
+### .index(x) da errore se non trova l'elemento indicato 
+the_data = ['data', -1, 2.7123]
+the_data.index(-1) # in questo caso è OKAY
+
+print(the_data[0.5])

@@ -144,7 +144,7 @@ tup = 1, 2, 3, 2, 4, 5, 6, 2, 7, 2, 8, 9
 duplicates = tup.count(2)
 print(duplicates)
 
-"""
+
 d1 = {'Adam Smith': 'A', 'Judy Paxton': 'B+'}
 d2 = {'Mary Louis': 'A', 'Patrick White': 'C'}
 d3 = {}
@@ -154,3 +154,79 @@ for item in (d1, d2):
 
 print(d3)
 
+
+def test(a=2, b=3):
+    return a * b
+
+print(test(3))
+
+
+a = len("kangaroo")
+
+b = len(input())
+
+def fun (x):
+    if x % 2 == 0:
+        return 1
+    else:
+        return
+    
+print(fun(fun(2)) + 1)
+
+
+def func (a,b):
+    return a ** a
+
+print(func(2))
+
+
+def any():
+    print(var + 1, end="")
+
+var=1
+any()
+print(var)
+
+
+def fun (x,y,z):
+    return x + 2 * y + 3 * z 
+
+print(fun(0, z=1, y=3))
+
+
+mylist = [x * x for x in range(5)]
+In = 2
+print("a", "b",sep="caca")
+
+def test(a=2, b=3):
+    return a * b
+
+lst = [[x for x in range(3)] for y in range(3)]
+print(1//2)
+
+foo = (1,2,3)
+foo.index(0)
+
+print(2%1)
+
+dd = {"1":"2"}
+dd.va
+
+p = 3 + - 1
+
+
+num = [1,2,4,6]
+print(-num[3])
+"""
+
+the_data = ['data', -1, 2.7123]
+the_data.index(-1)
+
+train_speed = {"Fly": 200, "Cacca": 300, "Pupu":1000}
+for t in train_speed.items():
+    print(t[0], end="")
+
+def ciao():
+    return ""
+def ciao():
+    return ""
